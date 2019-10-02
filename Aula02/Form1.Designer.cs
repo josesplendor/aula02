@@ -39,6 +39,8 @@
             this.IMC = new System.Windows.Forms.Button();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtAltura = new System.Windows.Forms.TextBox();
+            this.txtmes = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNome
@@ -132,11 +134,30 @@
             this.txtAltura.Size = new System.Drawing.Size(100, 20);
             this.txtAltura.TabIndex = 12;
             // 
+            // txtmes
+            // 
+            this.txtmes.Location = new System.Drawing.Point(131, 239);
+            this.txtmes.Name = "txtmes";
+            this.txtmes.Size = new System.Drawing.Size(104, 20);
+            this.txtmes.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(131, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 34);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Traduzir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormIMC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtmes);
             this.Controls.Add(this.txtAltura);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.IMC);
@@ -168,6 +189,8 @@
         private System.Windows.Forms.Button IMC;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtAltura;
+        private System.Windows.Forms.TextBox txtmes;
+        private System.Windows.Forms.Button button1;
     }
 }
 

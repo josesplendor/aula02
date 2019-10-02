@@ -121,6 +121,7 @@ namespace Aula02
             if (!decimal.TryParse(txtAltura.Text.Replace(".",","), out Altura))
             {
                 MessageBox.Show("Altura Inválida !");
+                return;
             }
 
           //  Peso = decimal.Parse(txtPeso.Text);
@@ -129,11 +130,75 @@ namespace Aula02
             if (!decimal.TryParse(txtPeso.Text.Replace(".", ","), out Peso))
             {
                 MessageBox.Show("Peso Inválido !");
+                return;
             }
 
             var descricao = VerificarImc(Peso, Altura, out var imc);
-            MessageBox.Show($"Nome: {nome}\nNascimento: {DiaNascimento.Text} de {MesNascimento.Text} de " +
-                $"{AnoNascimento.Text}\nIMC: {imc.ToString("N2")}\n\n{descricao}");
+
+            // MessageBox.Show($"Nome: {nome}\nNascimento: {DiaNascimento.Text} de {MesNascimento.Text} de " +
+            //   $"{AnoNascimento.Text}\nIMC: {imc.ToString("N2")}\n\n{descricao}");
+
+            MessageBox.Show($@"Nome: {nome}
+           {Environment.NewLine}Nascimento: {DiaNascimento.Text} de {MesNascimento.Text} de {AnoNascimento.Text}
+           {Environment.NewLine}IMC: {imc.ToString("N2")}
+           {Environment.NewLine}
+           {Environment.NewLine}{descricao}");
+        }
+
+        //private string TraduzirMes(int mes)
+        //{
+            //string descricao = string.Empty;
+            //switch (mes)
+            //{
+            //    case 1:
+            //        descricao = "Janeiro";
+            //        break;
+            //    case 2:
+            //        descricao = "Fevereiro";
+            //        break;
+            //    case 3:
+            //        descricao = "Março";
+            //        break;
+            //    case 4:
+            //        descricao = "Abril";
+            //        break;
+            //    case 5:
+            //        descricao = "Maio";
+            //        break;
+            //    case 6:
+            //        descricao = "Junho";
+            //        break;
+            //    case 7:
+            //        descricao = "Julho";
+            //        break;
+            //    case 8:
+            //        descricao = "Agosto";
+            //        break;
+            //    case 9:
+            //        descricao = "Setembro";
+            //        break;
+            //    case 10:
+            //        descricao = "Outubro";
+            //        break;
+            //    case 11:
+            //        descricao = "Novembro";
+            //        break;
+            //    case 12:
+            //        descricao = "Dezembro";
+            //        break;
+            //    default:
+            //        descricao = "Mês não encontrado";
+            //        break;
+            //}
+            //return descricao;
+
+            //var teste = Meses.First(x => x.Key == mes).Value;
+            //return 
+
+        //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+        
 
         }
     }
