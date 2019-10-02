@@ -62,12 +62,12 @@ namespace Aula02
 
             Meses.Add(12,"Dezembro");
 
-            int indice = 0;
-            while (indice < Dias.Length)
-            {
-                DiaNascimento.Items.Add(Dias[indice]);
-                indice++;
-            }
+          //  int indice = 0;
+         //   while (indice < Dias.Length)
+         //   {
+          //      DiaNascimento.Items.Add(Dias[indice]);
+          //      indice++;
+          //  }
 
             for (int i=0; i < Dias.Length; i++)
             {
@@ -82,6 +82,58 @@ namespace Aula02
             MesNascimento.DataSource = new BindingSource(Meses, null);
             MesNascimento.DisplayMember = "Value";
             MesNascimento.ValueMember = "Key";
+
+        }
+
+        private string VerificarImc(decimal peso, decimal altura, out decimal imc)
+        {
+            imc = peso / (altura * altura);
+            if (imc < (decimal)18.5)
+            {
+                return "Abaixo do peso";
+            }
+            else if (imc >= (decimal)18.5 && imc < 25)
+            {
+                return "Peso normal";
+            }
+            else if (imc >= 25 && imc < 30)
+            {
+                return "Sobrepeso";
+            }
+            else if (imc >= 30 && imc < 35)
+            {
+                return "Obesidade grau 1";
+            }
+            else if (imc >= 35 && imc < 39)
+            {
+                return "Obesidade grau 2";
+            }
+            else
+            {
+                return "Obesidade grau 3";
+            }
+        }
+        private void IMC_Click(object sender, EventArgs e)
+        {
+            string nome = txtNome.Text;
+          //  Altura = decimal.Parse(txtAltura.Text);
+         //   bool alturavalida = decimal.TryParse(txtAltura.Text, out Altura);
+            if (!decimal.TryParse(txtAltura.Text.Replace(".",","), out Altura))
+            {
+                MessageBox.Show("Altura Inválida !");
+            }
+
+          //  Peso = decimal.Parse(txtPeso.Text);
+          // && = e || = ou
+
+            if (!decimal.TryParse(txtPeso.Text.Replace(".", ","), out Peso))
+            {
+                MessageBox.Show("Peso Inválido !");
+            }
+
+            var descricao = VerificarImc(Peso, Altura, out var imc);
+            MessageBox.Show($"Nome: {nome}\nNascimento: {DiaNascimento.Text} de {MesNascimento.Text} de " +
+                $"{AnoNascimento.Text}\nIMC: {imc.ToString("N2")}\n\n{descricao}");
 
         }
     }

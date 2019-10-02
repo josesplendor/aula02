@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NomeTexto = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.Nome = new System.Windows.Forms.Label();
             this.Nascimento = new System.Windows.Forms.Label();
             this.DiaNascimento = new System.Windows.Forms.ComboBox();
@@ -41,12 +41,12 @@
             this.txtAltura = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // NomeTexto
+            // txtNome
             // 
-            this.NomeTexto.Location = new System.Drawing.Point(131, 34);
-            this.NomeTexto.Name = "NomeTexto";
-            this.NomeTexto.Size = new System.Drawing.Size(527, 20);
-            this.NomeTexto.TabIndex = 0;
+            this.txtNome.Location = new System.Drawing.Point(131, 34);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(527, 20);
+            this.txtNome.TabIndex = 0;
             // 
             // Nome
             // 
@@ -77,7 +77,7 @@
             // AnoNascimento
             // 
             this.AnoNascimento.FormattingEnabled = true;
-            this.AnoNascimento.Location = new System.Drawing.Point(241, 67);
+            this.AnoNascimento.Location = new System.Drawing.Point(270, 67);
             this.AnoNascimento.Name = "AnoNascimento";
             this.AnoNascimento.Size = new System.Drawing.Size(79, 21);
             this.AnoNascimento.TabIndex = 4;
@@ -87,7 +87,7 @@
             this.MesNascimento.FormattingEnabled = true;
             this.MesNascimento.Location = new System.Drawing.Point(186, 67);
             this.MesNascimento.Name = "MesNascimento";
-            this.MesNascimento.Size = new System.Drawing.Size(49, 21);
+            this.MesNascimento.Size = new System.Drawing.Size(78, 21);
             this.MesNascimento.TabIndex = 5;
             // 
             // PesoKG
@@ -116,6 +116,7 @@
             this.IMC.TabIndex = 10;
             this.IMC.Text = "Calculo IMC";
             this.IMC.UseVisualStyleBackColor = true;
+            this.IMC.Click += new System.EventHandler(this.IMC_Click);
             // 
             // txtPeso
             // 
@@ -146,7 +147,7 @@
             this.Controls.Add(this.DiaNascimento);
             this.Controls.Add(this.Nascimento);
             this.Controls.Add(this.Nome);
-            this.Controls.Add(this.NomeTexto);
+            this.Controls.Add(this.txtNome);
             this.Name = "FormIMC";
             this.Text = "Calcule aqui seu IMC";
             this.ResumeLayout(false);
@@ -156,7 +157,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox NomeTexto;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Label Nome;
         private System.Windows.Forms.Label Nascimento;
         private System.Windows.Forms.ComboBox DiaNascimento;
